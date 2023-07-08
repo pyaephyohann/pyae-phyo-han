@@ -9,6 +9,7 @@ module.exports = {
           100: "#242424",
           200: "#2F2F2F",
         },
+        transparent: "#A1A1AA",
       },
     },
   },

@@ -34,18 +34,18 @@ const NavBar = () => {
           </Link>
           <Link
             className={
-              location.pathname === "/about"
-                ? "navBarItemHover text-primary"
+              location.pathname === "/skills"
+                ? "navBarItemHover border-b-2 border-white pb-1"
                 : "navBarItemHover"
             }
-            to={`about`}
+            to={`/skills`}
           >
-            About
+            Skills
           </Link>
           <Link
             className={
               location.pathname === "/projects"
-                ? "navBarItemHover text-primary"
+                ? "navBarItemHover border-b-2 border-white pb-1"
                 : "navBarItemHover"
             }
             to={`/projects`}
@@ -55,7 +55,7 @@ const NavBar = () => {
           <Link
             className={
               location.pathname === "/contact"
-                ? "navBarItemHover text-primary"
+                ? "navBarItemHover border-b-2 border-white pb-1"
                 : "navBarItemHover"
             }
             to={`/contact`}

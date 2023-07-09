@@ -2,6 +2,24 @@ import { Link } from "react-router-dom";
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
 import SideBar from "./SideBar";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
+const navBarVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { duration: 1, delay: 0.5 },
+  },
+};
+
+const navBarItemsVariants = {
+  hover: {
+    scale: 1.5,
+    transition: { type: "spring", stiffness: 300 },
+  },
+};
 
 const NavBar = () => {
   const location = window.location;
@@ -9,7 +27,12 @@ const NavBar = () => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className="flex py-5 md:bg-secondary-200 items-center justify-between">
+    <motion.div
+      variants={navBarVariants}
+      initial="hidden"
+      animate="visible"
+      className="flex py-5 md:bg-secondary-200 items-center justify-between"
+    >
       <div className="text-primary text-2xl w-3/12 text-center cursor-pointer select-none">
         <Link to={`/`}>Pyae</Link>
       </div>
@@ -22,49 +45,51 @@ const NavBar = () => {
       </div>
       <div className="w-9/12 hidden md:block">
         <div className="flex justify-evenly  text-white text-lg">
-          <Link
+          <motion.div
+            variants={navBarItemsVariants}
+            whileHover="hover"
             className={
-              location.pathname === "/"
-                ? "navBarItemHover border-b-2 border-white pb-1"
-                : "navBarItemHover"
+              location.pathname === "/" ? "border-b-2 border-white pb-1" : ""
             }
-            to={`/`}
           >
-            Home
-          </Link>
-          <Link
+            <Link to={`/`}>Home</Link>
+          </motion.div>
+          <motion.div
+            variants={navBarItemsVariants}
+            whileHover="hover"
             className={
               location.pathname === "/skills"
-                ? "navBarItemHover border-b-2 border-white pb-1"
-                : "navBarItemHover"
+                ? "border-b-2 border-white pb-1"
+                : ""
             }
-            to={`/skills`}
           >
-            Skills
-          </Link>
-          <Link
+            <Link to={`/skills`}>Skills</Link>
+          </motion.div>
+          <motion.div
+            variants={navBarItemsVariants}
+            whileHover="hover"
             className={
               location.pathname === "/projects"
-                ? "navBarItemHover border-b-2 border-white pb-1"
-                : "navBarItemHover"
+                ? "border-b-2 border-white pb-1"
+                : ""
             }
-            to={`/projects`}
           >
-            Projects
-          </Link>
-          <Link
+            <Link to={`/projects`}>Projects</Link>
+          </motion.div>
+          <motion.div
+            variants={navBarItemsVariants}
+            whileHover="hover"
             className={
               location.pathname === "/contact"
-                ? "navBarItemHover border-b-2 border-white pb-1"
-                : "navBarItemHover"
+                ? "border-b-2 border-white pb-1"
+                : ""
             }
-            to={`/contact`}
           >
-            Contact
-          </Link>
+            <Link to={`/contact`}>Contact</Link>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,7 +1,40 @@
+import { motion } from "framer-motion";
 import Layout from "./Layout";
 
+interface Skill {
+  name: string;
+  icon: string;
+}
+
+const skillSetVariants = {
+  hidden: {
+    x: "-100vw",
+  },
+  visible: {
+    x: 0,
+
+    transition: { type: "spring", stiffness: 120, delay: 0.3 },
+  },
+};
+
+const skillVariants = {
+  hidden: {
+    opacity: 0,
+    y: "10rem",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 120, delay: 0.3 },
+  },
+  hover: {
+    scale: 1.3,
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+  },
+};
+
 const Skills = () => {
-  const skills = [
+  const skills: Skill[] = [
     {
       name: "HTML",
       icon: "https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/html-5%20(1).png?alt=media&token=544bf997-423f-45fb-80ac-53642921806d",
@@ -38,17 +71,28 @@ const Skills = () => {
 
   return (
     <Layout>
-      <div className="mt-16 sm:w-2/4 lg:w-5/12 xl:w-1/4 w-full flex flex-col items-center">
+      <motion.div
+        variants={skillSetVariants}
+        initial="hidden"
+        animate="visible"
+        className="mt-16 sm:w-2/4 lg:w-5/12 xl:w-1/4 w-full flex flex-col items-center"
+      >
         <div className="text-white text-sm">Services</div>
         <div className="text-3xl text-primary mt-5">Skill-Set</div>
-      </div>
+      </motion.div>
       <div className="flex flex-wrap justify-evenly mt-5">
         {skills.map((skill) => {
           return (
-            <div className="p-5 bg-secondary-200 w-fit rounded-xl m-16 flex flex-col items-center">
+            <motion.div
+              variants={skillVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+              className="p-5 bg-secondary-200 w-fit rounded-xl m-16 flex flex-col items-center"
+            >
               <div className="text-primary">{skill.name}</div>
               <img className="h-36 mt-5" alt={skill.name} src={skill.icon} />
-            </div>
+            </motion.div>
           );
         })}
       </div>

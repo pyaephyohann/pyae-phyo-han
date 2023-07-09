@@ -17,3 +17,19 @@ code {
 .navBarItemHover {
   @apply hover:scale-150 transition ease-in-out duration-500 hover:text-primary;
 }
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #00dfa2 !important;
+}
+
+.MuiFilledInput-root {
+  border-bottom: 1px solid #00dfa2 !important;
+}
+
+.MuiInput-root {
+  border-bottom: 1px solid #00dfa2 !important;
+}
+
+.MuiInputLabel-root {
+  color: white !important;
+}

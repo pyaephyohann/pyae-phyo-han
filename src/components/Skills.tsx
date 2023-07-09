@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Layout from "./Layout";
+import { Link } from "react-router-dom";
 
 interface Skill {
   name: string;
@@ -12,7 +13,6 @@ const skillSetVariants = {
   },
   visible: {
     x: 0,
-
     transition: { type: "spring", stiffness: 120, delay: 0.3 },
   },
 };
@@ -30,6 +30,21 @@ const skillVariants = {
   hover: {
     scale: 1.3,
     boxShadow: "0px 0px 8px rgb(255,255,255)",
+  },
+};
+
+const projectsVariants = {
+  hover: {
+    scale: 1.5,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+  },
+  hidden: {
+    y: "100vh",
+  },
+  visible: {
+    y: 0,
+    transition: { type: "spring", stiffness: 120, delay: 0.3 },
   },
 };
 
@@ -71,6 +86,7 @@ const Skills = () => {
 
   return (
     <Layout>
+      {/* Header */}
       <motion.div
         variants={skillSetVariants}
         initial="hidden"
@@ -80,6 +96,7 @@ const Skills = () => {
         <div className="text-white text-sm">Services</div>
         <div className="text-3xl text-primary mt-5">Skill-Set</div>
       </motion.div>
+      {/* Body */}
       <div className="flex flex-wrap justify-evenly mt-5">
         {skills.map((skill) => {
           return (
@@ -95,6 +112,36 @@ const Skills = () => {
             </motion.div>
           );
         })}
+      </div>
+      {/* Footer */}
+      <div className="px-5 sm:flex sm:justify-center sm:w-full md:w-11/12 md:justify-center lg:w-10/12 lg:justify-center xl:w-3/5 xl:justify-center">
+        <div className="text-transparent text-xl pb-5 mt-5">
+          <motion.div
+            variants={skillSetVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <div>
+              This Website was developed with react, tailwind and framer motion
+            </div>
+            <div className="my-5">
+              I love creating different web apps using javascript's frameworks
+            </div>
+            <div>
+              If you want to take a look my projects, you can visit to my
+              Projects page
+            </div>
+          </motion.div>
+          <motion.div
+            variants={projectsVariants}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+            className="text-primary border-2 border-primary rounded-2xl w-fit p-2 mt-10 mx-auto mb-5"
+          >
+            <Link to={`/projects`}>Projects</Link>
+          </motion.div>
+        </div>
       </div>
     </Layout>
   );

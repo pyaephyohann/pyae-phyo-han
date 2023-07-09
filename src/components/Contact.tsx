@@ -3,6 +3,9 @@ import Layout from "./Layout";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Contact = () => {
   return (
@@ -98,6 +101,19 @@ const Contact = () => {
               <div>Submit</div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="md:bg-secondary-200 md:p-10 p-5">
+        <div className="w-80 mx-auto flex justify-evenly">
+          <a href="https://github.com/pyaephyohann">
+            <GitHubIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100048688099795">
+            <FacebookIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100048688099795">
+            <InstagramIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
+          </a>
         </div>
       </div>
     </Layout>

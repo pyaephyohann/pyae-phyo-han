@@ -16,7 +16,7 @@ const leftVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 120, delay: 0.3 },
+    transition: { type: "spring", stiffness: 150, delay: 0.3 },
   },
 };
 
@@ -28,7 +28,7 @@ const rightVariants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 120, delay: 0.3 },
+    transition: { type: "spring", stiffness: 150, delay: 0.3 },
   },
 };
 

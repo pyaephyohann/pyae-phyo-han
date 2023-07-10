@@ -6,13 +6,53 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { motion } from "framer-motion";
+
+const leftVariants = {
+  hidden: {
+    opacity: 0,
+    y: "-100vh",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 120, delay: 0.3 },
+  },
+};
+
+const rightVariants = {
+  hidden: {
+    y: "100vh",
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 120, delay: 0.3 },
+  },
+};
+
+const footerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { duration: 1, delay: 0.5 },
+  },
+};
 
 const Contact = () => {
   return (
     <Layout>
       <div className="lg:flex lg:justify-evenly mt-16 mb-10">
         {/* Left Side */}
-        <div className="flex-col md:flex md:flex-row md:justify-evenly lg:flex lg:flex-col">
+        <motion.div
+          variants={leftVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex-col md:flex md:flex-row md:justify-evenly lg:flex lg:flex-col"
+        >
           <div>
             <img
               className="h-80 lg:h-96 rounded-2xl mx-auto"
@@ -36,9 +76,9 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* Right Side */}
-        <div>
+        <motion.div variants={rightVariants} initial="hidden" animate="visible">
           <div className="text-primary text-4xl mb-10 text-center mt-16 lg:mt-0">
             Get in Touch
           </div>
@@ -101,9 +141,15 @@ const Contact = () => {
               <div>Submit</div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="md:bg-secondary-200 md:p-10 p-5">
+      {/* Footer */}
+      <motion.div
+        variants={footerVariants}
+        initial="hidden"
+        animate="visible"
+        className="md:bg-secondary-200 md:p-10 p-5"
+      >
         <div className="w-80 mx-auto flex justify-evenly">
           <a href="https://github.com/pyaephyohann">
             <GitHubIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
@@ -115,7 +161,7 @@ const Contact = () => {
             <InstagramIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
           </a>
         </div>
-      </div>
+      </motion.div>
     </Layout>
   );
 };

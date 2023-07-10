@@ -1,4 +1,3 @@
-import { TextField } from "@mui/material";
 import Layout from "./Layout";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
@@ -7,6 +6,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { motion } from "framer-motion";
+import SendEmail from "./SendEmai";
 
 const leftVariants = {
   hidden: {
@@ -16,18 +16,6 @@ const leftVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 150, delay: 0.3 },
-  },
-};
-
-const rightVariants = {
-  hidden: {
-    y: "100vh",
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
     transition: { type: "spring", stiffness: 150, delay: 0.3 },
   },
 };
@@ -78,70 +66,7 @@ const Contact = () => {
           </div>
         </motion.div>
         {/* Right Side */}
-        <motion.div variants={rightVariants} initial="hidden" animate="visible">
-          <div className="text-primary text-4xl mb-10 text-center mt-16 lg:mt-0">
-            Get in Touch
-          </div>
-          <div className="w-fit mx-auto lg:mx-0">
-            <div className="text-white">
-              <div className="mb-4 text-xl">Name</div>
-              <TextField
-                sx={{ width: "20rem" }}
-                InputLabelProps={{
-                  style: {
-                    color: "white",
-                  },
-                }}
-                InputProps={{
-                  style: {
-                    color: "white",
-                  },
-                }}
-                label="Enter Your Name"
-                autoComplete="off"
-              />
-            </div>
-            <div className="text-white my-8">
-              <div className="mb-4 text-xl">Email</div>
-              <TextField
-                sx={{ width: "20rem" }}
-                InputLabelProps={{
-                  style: {
-                    color: "white",
-                  },
-                }}
-                InputProps={{
-                  style: {
-                    color: "white",
-                  },
-                }}
-                label="Enter Your Email"
-                autoComplete="off"
-              />
-            </div>
-            <div className="text-white">
-              <div className="mb-4 text-xl">Message For Me</div>
-              <TextField
-                sx={{ width: "20rem" }}
-                InputLabelProps={{
-                  style: {
-                    color: "white",
-                  },
-                }}
-                InputProps={{
-                  style: {
-                    color: "white",
-                    height: "8rem",
-                  },
-                }}
-                autoComplete="off"
-              />
-            </div>
-            <div className="p-2 mt-8 cursor-pointer select-none text-white bg-primary text-center uppercase rounded-xl">
-              <div>Submit</div>
-            </div>
-          </div>
-        </motion.div>
+        <SendEmail />
       </div>
       {/* Footer */}
       <motion.div

@@ -15,21 +15,44 @@ const rightVariants = {
   },
 };
 
-interface Props {
-  setShow: (value: boolean) => void;
+interface EmailMessage {
+  show: boolean;
+  showContentStatus: string;
 }
 
-const SendEmail = ({ setShow }: Props) => {
+interface Props {
+  emailMessage: EmailMessage;
+  setEmailMessage: (value: EmailMessage) => void;
+}
+
+const SendEmail = ({ emailMessage, setEmailMessage }: Props) => {
   const form = useRef<HTMLFormElement>(null);
   const [email, setEmail] = useState({ name: "", email: "", message: "" });
   const handleSubmit = (e: any) => {
     e.preventDefault();
+
     const formData = new FormData(form.current!);
     const values = Object.fromEntries(formData.entries());
+
+    const { user_name, user_email, message } = values;
+
+    const isValid = user_name && user_email && message;
+
+    if (!isValid)
+      return setEmailMessage({
+        ...emailMessage,
+        show: true,
+        showContentStatus: "bad",
+      });
+
     emailjs
       .send("service_um0rnsb", "template_8rx4zyi", values, "C7FZHBRWr2fOX03lO")
       .then(() => {
-        setShow(true);
+        setEmailMessage({
+          ...emailMessage,
+          show: true,
+          showContentStatus: "ok",
+        });
         setEmail({ ...email, name: "", email: "", message: "" });
       })
       .catch(() => {

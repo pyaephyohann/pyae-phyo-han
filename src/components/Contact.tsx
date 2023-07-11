@@ -7,7 +7,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { motion } from "framer-motion";
 import SendEmail from "./SendEmail";
-import EmailModal from "./EmailModal";
+import EmailMessage from "./EmailMessage";
 import { useEffect, useState } from "react";
 
 const leftVariants = {
@@ -33,18 +33,22 @@ const footerVariants = {
 };
 
 const Contact = () => {
-  const [show, setShow] = useState(false);
+  const [emailMessage, setEmailMessage] = useState({
+    show: false,
+    showContentStatus: "",
+  });
+
   useEffect(() => {
-    if (show) {
+    if (emailMessage.show) {
       setTimeout(() => {
-        setShow(false);
+        setEmailMessage({ ...emailMessage, show: false });
       }, 4000);
     }
-  }, [show]);
+  }, [emailMessage.show]);
 
   return (
     <Layout>
-      <EmailModal show={show} />
+      <EmailMessage emailMessage={emailMessage} />
       <div className="lg:flex lg:justify-evenly mt-16 mb-10">
         {/* Left Side */}
         <motion.div
@@ -78,7 +82,10 @@ const Contact = () => {
           </div>
         </motion.div>
         {/* Right Side */}
-        <SendEmail setShow={setShow} />
+        <SendEmail
+          emailMessage={emailMessage}
+          setEmailMessage={setEmailMessage}
+        />
       </div>
       {/* Footer */}
       <motion.div

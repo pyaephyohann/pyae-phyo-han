@@ -6,7 +6,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { motion } from "framer-motion";
-import SendEmail from "./SendEmai";
+import SendEmail from "./SendEmail";
 import EmailModal from "./EmailModal";
 import { useEffect, useState } from "react";
 

@@ -15,27 +15,34 @@ const rightVariants = {
   },
 };
 
-const SendEmail = () => {
+interface Props {
+  setShow: (value: boolean) => void;
+}
+
+const SendEmail = ({ setShow }: Props) => {
   const form = useRef<HTMLFormElement>(null);
   const [email, setEmail] = useState({ name: "", email: "", message: "" });
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
     const formData = new FormData(form.current!);
     const values = Object.fromEntries(formData.entries());
-
     emailjs
       .send("service_um0rnsb", "template_8rx4zyi", values, "C7FZHBRWr2fOX03lO")
       .then(() => {
-        alert("Email Sent Successfully!");
+        setShow(true);
         setEmail({ ...email, name: "", email: "", message: "" });
       })
-      .catch((error) => {
+      .catch(() => {
         alert("Error sending email:");
       });
   };
   return (
-    <motion.div variants={rightVariants} initial="hidden" animate="visible">
+    <motion.div
+      className="static"
+      variants={rightVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="text-primary text-4xl mb-10 text-center mt-16 lg:mt-0">
         Get in Touch
       </div>

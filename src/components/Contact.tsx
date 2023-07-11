@@ -7,6 +7,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { motion } from "framer-motion";
 import SendEmail from "./SendEmai";
+import EmailModal from "./EmailModal";
+import { useEffect, useState } from "react";
 
 const leftVariants = {
   hidden: {
@@ -31,8 +33,18 @@ const footerVariants = {
 };
 
 const Contact = () => {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    if (show) {
+      setTimeout(() => {
+        setShow(false);
+      }, 4000);
+    }
+  }, [show]);
+
   return (
     <Layout>
+      <EmailModal show={show} />
       <div className="lg:flex lg:justify-evenly mt-16 mb-10">
         {/* Left Side */}
         <motion.div
@@ -66,7 +78,7 @@ const Contact = () => {
           </div>
         </motion.div>
         {/* Right Side */}
-        <SendEmail />
+        <SendEmail setShow={setShow} />
       </div>
       {/* Footer */}
       <motion.div

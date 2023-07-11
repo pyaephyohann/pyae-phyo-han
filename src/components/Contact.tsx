@@ -94,7 +94,7 @@ const Contact = () => {
           <a href="https://www.facebook.com/profile.php?id=100048688099795">
             <FacebookIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
           </a>
-          <a href="https://www.facebook.com/profile.php?id=100048688099795">
+          <a href="https://www.instagram.com/pyaephyohan0807">
             <InstagramIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
           </a>
         </div>

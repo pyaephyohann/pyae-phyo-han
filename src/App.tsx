@@ -41,11 +41,11 @@ const skillsVariants = {
   },
 };
 
-function App() {
+const App = () => {
   return (
     <Layout>
       {/* Container */}
-      <div className="lg:mt-16 mt-5 lg:flex lg:justify-evenly">
+      <div className="mt-5 lg:mt-16 lg:flex lg:justify-evenly">
         {/* Left Side */}
         <motion.div
           variants={leftVariants}
@@ -57,7 +57,7 @@ function App() {
             <div className="mb-2">Hello! I'm </div>
             <div className="text-primary">Pyae Phyo Han</div>
           </div>
-          <div className="text-transparent text-lg lg:mt-10 mt-8">
+          <div className="text-transparent text-lg mt-8 lg:mt-10">
             19 years old boy who love coding and build fullstack web
             applications
           </div>
@@ -77,7 +77,7 @@ function App() {
         {/* Right Side */}
         <motion.div variants={rightVariants} initial="hidden" animate="visible">
           <img
-            className="lg:h-80 rounded-2xl h-60 mx-auto lg:mx-0 mt-5 lg:mt-0"
+            className="rounded-2xl h-60 lg:h-80 mx-auto lg:mx-0 mt-5 lg:mt-0"
             alt="pyaephyohan"
             src="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/received_915212149754401.jpg?alt=media&token=c28bd606-e8ec-44ad-8f8c-88b1adaba6f4"
           />
@@ -88,7 +88,7 @@ function App() {
         variants={footerVariants}
         initial="hidden"
         animate="visible"
-        className="lg:mt-20 mt-6 flex flex-col sm:justify-center items-center p-5 lg:p-0"
+        className="flex flex-col sm:justify-center items-center mt-6 lg:mt-20 p-5 lg:p-0"
       >
         <div className="text-white text-xl mb-8">
           That's about me and let's take a look what I learned. Here are my
@@ -103,6 +103,6 @@ function App() {
       </motion.div>
     </Layout>
   );
-}
+};
 
 export default App;

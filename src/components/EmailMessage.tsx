@@ -1,10 +1,6 @@
 import MarkEmailReadIcon from "@mui/icons-material/MarkEmailRead";
 import { AnimatePresence, motion } from "framer-motion";
-
-interface EmailMessageType {
-  show: boolean;
-  showContentStatus: string;
-}
+import { EmailMessageType } from "../utils/typings/types";
 
 interface Props {
   emailMessage: EmailMessageType;

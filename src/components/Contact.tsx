@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <Layout>
       <EmailMessage emailMessage={emailMessage} />
-      <div className="lg:flex lg:justify-evenly mt-16 mb-10">
+      <div className="mt-16 mb-10 lg:flex lg:justify-evenly">
         {/* Left Side */}
         <motion.div
           variants={leftVariants}
@@ -64,7 +64,7 @@ const Contact = () => {
               src="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/SmartSelect_20230709-163036_Maps.jpg?alt=media&token=40722aae-140c-415d-8cad-2d3b07d5aa27"
             />
           </div>
-          <div className="mt-10 mx-auto w-fit md:mx-0">
+          <div className="mt-10 w-fit mx-auto md:mx-0">
             <div className="flex items-center">
               <MailOutlineIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
               <div className="text-white ml-3">pyaephyohan2200@gmail.com</div>
@@ -92,7 +92,7 @@ const Contact = () => {
         variants={footerVariants}
         initial="hidden"
         animate="visible"
-        className="md:bg-secondary-200 md:p-10 p-5"
+        className="p-5 md:p-10 md:bg-secondary-200 "
       >
         <div className="w-80 mx-auto flex justify-evenly">
           <a href="https://github.com/pyaephyohann">

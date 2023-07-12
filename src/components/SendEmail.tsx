@@ -2,6 +2,7 @@ import { Button, TextField } from "@mui/material";
 import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { EmailMessageType } from "../utils/typings/types";
 
 const rightVariants = {
   hidden: {
@@ -15,14 +16,9 @@ const rightVariants = {
   },
 };
 
-interface EmailMessage {
-  show: boolean;
-  showContentStatus: string;
-}
-
 interface Props {
-  emailMessage: EmailMessage;
-  setEmailMessage: (value: EmailMessage) => void;
+  emailMessage: EmailMessageType;
+  setEmailMessage: (value: EmailMessageType) => void;
 }
 
 const SendEmail = ({ emailMessage, setEmailMessage }: Props) => {
@@ -142,7 +138,10 @@ const SendEmail = ({ emailMessage, setEmailMessage }: Props) => {
             />
           </div>
           <div className="p-2 mt-8 cursor-pointer select-none text-white bg-primary text-center uppercase rounded-xl">
-            <Button type="submit" sx={{ color: "white" }}>
+            <Button
+              type="submit"
+              sx={{ color: "white", width: "100%", height: "100%" }}
+            >
               Submit
             </Button>
           </div>

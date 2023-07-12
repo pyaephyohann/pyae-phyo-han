@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import Layout from "./Layout";
 import { Link } from "react-router-dom";
-
-interface Skill {
-  name: string;
-  icon: string;
-}
+import { Skill } from "../utils/typings/types";
 
 const skillSetVariants = {
   hidden: {
@@ -91,7 +87,7 @@ const Skills = () => {
         variants={skillSetVariants}
         initial="hidden"
         animate="visible"
-        className="mt-16 sm:w-2/4 lg:w-5/12 xl:w-1/4 w-full flex flex-col items-center"
+        className="flex flex-col items-center mt-16 w-full sm:w-2/4 lg:w-5/12 xl:w-1/4"
       >
         <div className="text-white text-sm">Services</div>
         <div className="text-3xl text-primary mt-5">Skill-Set</div>

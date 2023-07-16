@@ -97,6 +97,7 @@ const Skills = () => {
         {skills.map((skill) => {
           return (
             <motion.div
+              key={skill.name}
               variants={skillVariants}
               initial="hidden"
               animate="visible"

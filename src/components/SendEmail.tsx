@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { EmailMessageType } from "../utils/typings/types";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const rightVariants = {
   hidden: {
@@ -24,7 +25,10 @@ interface Props {
 const SendEmail = ({ emailMessage, setEmailMessage }: Props) => {
   const form = useRef<HTMLFormElement>(null);
   const [email, setEmail] = useState({ name: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = (e: any) => {
+    setLoading(true);
     e.preventDefault();
 
     const formData = new FormData(form.current!);
@@ -50,6 +54,7 @@ const SendEmail = ({ emailMessage, setEmailMessage }: Props) => {
           showContentStatus: "ok",
         });
         setEmail({ ...email, name: "", email: "", message: "" });
+        setLoading(false);
       })
       .catch(() => {
         alert("Error sending email:");
@@ -142,7 +147,11 @@ const SendEmail = ({ emailMessage, setEmailMessage }: Props) => {
               type="submit"
               sx={{ color: "white", width: "100%", height: "100%" }}
             >
-              Submit
+              {loading ? (
+                <CircularProgress sx={{ color: "white" }} />
+              ) : (
+                "Send Email"
+              )}
             </Button>
           </div>
         </div>

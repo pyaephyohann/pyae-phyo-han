@@ -38,12 +38,15 @@ const SendEmail = ({ emailMessage, setEmailMessage }: Props) => {
 
     const isValid = user_name && user_email && message;
 
-    if (!isValid)
-      return setEmailMessage({
+    if (!isValid) {
+      setEmailMessage({
         ...emailMessage,
         show: true,
         showContentStatus: "bad",
       });
+      setLoading(false);
+      return;
+    }
 
     emailjs
       .send("service_um0rnsb", "template_8rx4zyi", values, "C7FZHBRWr2fOX03lO")

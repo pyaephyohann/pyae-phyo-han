@@ -33,7 +33,7 @@ const NavBar = () => {
       animate="visible"
       className="flex py-5 md:bg-secondary-200 items-center justify-between"
     >
-      <div className="text-primary text-2xl w-3/12 text-center cursor-pointer select-none">
+      <div className="text-primary text-3xl font-title w-3/12 text-center cursor-pointer select-none">
         <Link to={`/`}>Pyae</Link>
       </div>
       <SideBar show={show} setShow={setShow} />

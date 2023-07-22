@@ -64,7 +64,7 @@ const Contact = () => {
               src="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/SmartSelect_20230709-163036_Maps.jpg?alt=media&token=40722aae-140c-415d-8cad-2d3b07d5aa27"
             />
           </div>
-          <div className="mt-10 w-fit mx-auto md:mx-0">
+          <div className="mt-10 w-fit px-2 mx-auto md:mx-0">
             <div className="flex items-center">
               <MailOutlineIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
               <div className="text-white ml-3">pyaephyohan2200@gmail.com</div>

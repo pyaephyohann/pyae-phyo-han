@@ -12,7 +12,7 @@ module.exports = {
         transparent: "#A1A1AA",
       },
       fontFamily: {
-        title: ["Lobster"],
+        title: ["Dancing Script"],
       },
     },
   },

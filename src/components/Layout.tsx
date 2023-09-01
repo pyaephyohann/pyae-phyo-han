@@ -8,8 +8,13 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <div className="relative">
-      <NavBar />
-      {children}
+      {/* Fixed Navbar */}
+      <div className="fixed top-0 left-0 w-full z-50">
+        <NavBar />
+      </div>
+
+      {/* Scrollable Content */}
+      <div className="relative">{children}</div>
     </div>
   );
 };

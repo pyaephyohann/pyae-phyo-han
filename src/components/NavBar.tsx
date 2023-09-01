@@ -31,9 +31,9 @@ const NavBar = () => {
       variants={navBarVariants}
       initial="hidden"
       animate="visible"
-      className="flex py-5 md:bg-secondary-200 items-center justify-between"
+      className="flex py-5 bg-secondary-200 items-center justify-between"
     >
-      <div className="text-primary text-3xl font-title w-3/12 text-center cursor-pointer select-none">
+      <div className="text-primary text-4xl font-title w-3/12 text-center cursor-pointer select-none">
         <Link to={`/`}>Pyae</Link>
       </div>
       <SideBar show={show} setShow={setShow} />
@@ -54,17 +54,7 @@ const NavBar = () => {
           >
             <Link to={`/`}>Home</Link>
           </motion.div>
-          <motion.div
-            variants={navBarItemsVariants}
-            whileHover="hover"
-            className={
-              location.pathname === "/skills"
-                ? "border-b-2 border-white pb-1"
-                : ""
-            }
-          >
-            <Link to={`/skills`}>Skills</Link>
-          </motion.div>
+
           <motion.div
             variants={navBarItemsVariants}
             whileHover="hover"

@@ -1,8 +1,3 @@
-export interface EmailMessageType {
-  show: boolean;
-  showContentStatus: string;
-}
-
 export interface Tech {
   imageUrl?: string;
   delay?: string;

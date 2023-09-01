@@ -1,8 +1,8 @@
 import { Button, TextField } from "@mui/material";
 import { motion } from "framer-motion";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { EmailMessageType } from "../utils/typings/types";
+
 import CircularProgress from "@mui/material/CircularProgress";
 
 const rightVariants = {
@@ -18,11 +18,11 @@ const rightVariants = {
 };
 
 interface Props {
-  emailMessage: EmailMessageType;
-  setEmailMessage: (value: EmailMessageType) => void;
+  setOpenSuccessAlert: (value: boolean) => void;
+  setOpenWarningAlert: (value: boolean) => void;
 }
 
-const SendEmail = ({ emailMessage, setEmailMessage }: Props) => {
+const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
   const form = useRef<HTMLFormElement>(null);
   const [email, setEmail] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
@@ -39,25 +39,17 @@ const SendEmail = ({ emailMessage, setEmailMessage }: Props) => {
     const isValid = user_name && user_email && message;
 
     if (!isValid) {
-      setEmailMessage({
-        ...emailMessage,
-        show: true,
-        showContentStatus: "bad",
-      });
       setLoading(false);
+      setOpenWarningAlert(true);
       return;
     }
 
     emailjs
       .send("service_um0rnsb", "template_8rx4zyi", values, "C7FZHBRWr2fOX03lO")
       .then(() => {
-        setEmailMessage({
-          ...emailMessage,
-          show: true,
-          showContentStatus: "ok",
-        });
         setEmail({ ...email, name: "", email: "", message: "" });
         setLoading(false);
+        setOpenSuccessAlert(true);
       })
       .catch(() => {
         alert("Error sending email:");

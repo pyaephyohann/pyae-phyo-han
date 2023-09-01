@@ -7,8 +7,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { motion } from "framer-motion";
 import SendEmail from "./SendEmail";
-import EmailMessage from "./EmailMessage";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import SuccessAlert from "./SuccessAlert";
+import WarningAlert from "./WarningAlert";
 
 const leftVariants = {
   hidden: {
@@ -33,22 +34,12 @@ const footerVariants = {
 };
 
 const Contact = () => {
-  const [emailMessage, setEmailMessage] = useState({
-    show: false,
-    showContentStatus: "",
-  });
+  const [openSuccessAlert, setOpenSuccessAlert] = useState(false);
 
-  useEffect(() => {
-    if (emailMessage.show) {
-      setTimeout(() => {
-        setEmailMessage({ ...emailMessage, show: false });
-      }, 4000);
-    }
-  }, [emailMessage, emailMessage.show]);
+  const [openWarningAlert, setOpenWarningAlert] = useState(false);
 
   return (
     <Layout>
-      <EmailMessage emailMessage={emailMessage} />
       <div className="mt-[8rem] mb-10 lg:flex lg:justify-evenly">
         {/* Left Side */}
         <motion.div
@@ -83,8 +74,8 @@ const Contact = () => {
         </motion.div>
         {/* Right Side */}
         <SendEmail
-          emailMessage={emailMessage}
-          setEmailMessage={setEmailMessage}
+          setOpenSuccessAlert={setOpenSuccessAlert}
+          setOpenWarningAlert={setOpenWarningAlert}
         />
       </div>
       {/* Footer */}
@@ -106,6 +97,16 @@ const Contact = () => {
           </a>
         </div>
       </motion.div>
+      <SuccessAlert
+        open={openSuccessAlert}
+        setOpen={setOpenSuccessAlert}
+        message="Email sent successfully"
+      />
+      <WarningAlert
+        open={openWarningAlert}
+        setOpen={setOpenWarningAlert}
+        message="You need to fill all the requirements"
+      />
     </Layout>
   );
 };

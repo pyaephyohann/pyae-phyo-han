@@ -23,7 +23,7 @@ const ProjectCard = ({ project }: Props) => {
       variants={upVariants}
       initial="hidden"
       animate="visible"
-      className="text-white p-[1.5rem] bg-secondary-200 w-fit rounded-xl md:m-[1.5rem]"
+      className="text-white p-[0.5rem] md:p-[1.5rem] bg-secondary-200 w-fit rounded-xl md:m-[1.5rem]"
     >
       <a href="https://pizngo.shop">
         <img
@@ -32,7 +32,9 @@ const ProjectCard = ({ project }: Props) => {
           className="w-[30rem] h-[15rem] rounded-md"
         />
       </a>
-      <div className="text-2xl mt-[1.2rem] md:mt-[1.8rem]">{project.name}</div>
+      <div className="text-xl md:text-2xl mt-[1.2rem] md:mt-[1.8rem]">
+        {project.name}
+      </div>
       <div className="text-transparent mt-[0.6rem] md:mt-[1rem]">
         {project.description}
       </div>

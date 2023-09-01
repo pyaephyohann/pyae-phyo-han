@@ -21,16 +21,7 @@ const SideBar = ({ show, setShow }: Props) => {
         >
           Home
         </Link>
-        <Link
-          className={
-            location.pathname === "/skills"
-              ? "navBarItemHover text-primary mb-5"
-              : "navBarItemHover mb-5"
-          }
-          to={`/skills`}
-        >
-          Skills
-        </Link>
+
         <Link
           className={
             location.pathname === "/projects"

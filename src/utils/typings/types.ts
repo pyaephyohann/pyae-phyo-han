@@ -3,7 +3,16 @@ export interface EmailMessageType {
   showContentStatus: string;
 }
 
-export interface Skill {
+export interface Tech {
+  imageUrl?: string;
+  delay?: string;
+  name?: string;
+  color?: string;
+}
+
+export interface Project {
   name: string;
-  icon: string;
+  description: string;
+  imageUrl: string;
+  techs: Tech[];
 }

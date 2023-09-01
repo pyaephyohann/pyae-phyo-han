@@ -44,12 +44,12 @@ const Contact = () => {
         setEmailMessage({ ...emailMessage, show: false });
       }, 4000);
     }
-  }, [emailMessage.show]);
+  }, [emailMessage, emailMessage.show]);
 
   return (
     <Layout>
       <EmailMessage emailMessage={emailMessage} />
-      <div className="mt-16 mb-10 lg:flex lg:justify-evenly">
+      <div className="mt-[8rem] mb-10 lg:flex lg:justify-evenly">
         {/* Left Side */}
         <motion.div
           variants={leftVariants}

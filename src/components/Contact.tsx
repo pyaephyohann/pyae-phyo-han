@@ -5,6 +5,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { motion } from "framer-motion";
 import SendEmail from "./SendEmail";
 import { useState } from "react";
@@ -94,6 +95,9 @@ const Contact = () => {
           </a>
           <a href="https://www.instagram.com/pyaephyohan0807">
             <InstagramIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
+          </a>
+          <a href="https://www.linkedin.com/in/pyae-phyo-han-65aab2264">
+            <LinkedInIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
           </a>
         </div>
       </motion.div>

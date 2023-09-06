@@ -3,6 +3,8 @@ import MenuSharpIcon from "@mui/icons-material/MenuSharp";
 import SideBar from "./SideBar";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
+import { Button } from "@mui/material";
 
 const navBarVariants = {
   hidden: {
@@ -31,19 +33,19 @@ const NavBar = () => {
       variants={navBarVariants}
       initial="hidden"
       animate="visible"
-      className="flex py-5 bg-secondary-200 items-center justify-between"
+      className="flex py-5 bg-secondary-200 items-center justify-between md:justify-around"
     >
-      <div className="text-primary text-4xl font-title w-3/12 text-center cursor-pointer select-none">
+      <div className="text-primary ml-[2rem] md:ml-[0] text-4xl font-title cursor-pointer select-none">
         <Link to={`/`}>Pyae</Link>
       </div>
       <SideBar show={show} setShow={setShow} />
       <div
         onClick={() => setShow(true)}
-        className="block md:hidden text-white mr-10 cursor-pointer "
+        className="block md:hidden mr-[2rem] md:mr-[0] text-white cursor-pointer"
       >
         <MenuSharpIcon fontSize="large" />
       </div>
-      <div className="w-9/12 hidden md:block">
+      <div className="w-[50%] hidden md:block">
         <div className="flex justify-evenly  text-white text-lg">
           <motion.div
             variants={navBarItemsVariants}
@@ -78,6 +80,17 @@ const NavBar = () => {
             <Link to={`/contact`}>Contact</Link>
           </motion.div>
         </div>
+      </div>
+      <div className="hidden md:block">
+        <a href="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/myresume.pdf?alt=media&token=d050ecd6-f1f3-4181-8e66-16675728fe0a">
+          <Button
+            sx={{ bgcolor: "#00DFA2", ":hover": { bgcolor: "#00DFA2" } }}
+            variant="contained"
+            startIcon={<CloudDownloadIcon />}
+          >
+            Download CV
+          </Button>
+        </a>
       </div>
     </motion.div>
   );

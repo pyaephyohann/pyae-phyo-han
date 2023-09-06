@@ -99,8 +99,8 @@ const App = () => {
             <div className="text-primary">Pyae Phyo Han</div>
           </div>
           <div className="text-transparent text-lg mt-8 lg:mt-10">
-            19 years old boy who love coding and build fullstack web
-            applications
+            A passionate fullstack developer with React.js, Express.js and
+            Databases
           </div>
           <div className="text-transparent text-lg mt-2">
             I learned html, css and javascript from youtube and attended
@@ -109,10 +109,11 @@ const App = () => {
             MSquare Programming fullstack course for six months
           </div>
           <div className="text-transparent text-lg mt-2">
-            I'm really into building beautiful and functional websites
+            I have strong communication skill and I'm entry level developer so
           </div>
           <div className="text-transparent text-lg mt-2">
-            I have a dream of being a powerful developer
+            I'm seeking for a job opportunity to get real world projects
+            experiences
           </div>
         </motion.div>
         {/* Right Side */}

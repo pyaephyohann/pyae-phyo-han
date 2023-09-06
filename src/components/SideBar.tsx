@@ -16,7 +16,7 @@ const SideBar = ({ show, setShow }: Props) => {
     <Drawer anchor="right" open={show} onClose={() => setShow(false)}>
       <div className="mt-[2.5rem] px-[1rem]">
         <div className="flex justify-around items-center">
-          <div className="text-primary text-4xl mr-[10rem] font-title cursor-pointer select-none ml-[1rem]">
+          <div className="text-primary text-4xl mr-[8rem] font-title cursor-pointer select-none ml-[1rem]">
             <Link to={`/`}>Pyae</Link>
           </div>
           <IconButton onClick={() => setShow(false)} sx={{ mr: "1rem" }}>

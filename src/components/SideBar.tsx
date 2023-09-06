@@ -48,7 +48,7 @@ const SideBar = ({ show, setShow }: Props) => {
           <Divider />
         </div>
         <div className="w-fit mx-auto">
-          <a href="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/myresume.pdf?alt=media&token=d050ecd6-f1f3-4181-8e66-16675728fe0a">
+          <a href="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/pyae_phyo_han_resume.pdf?alt=media&token=3dfbf9fb-ca1b-485b-8003-b1d2de99e92c">
             <Button
               sx={{ bgcolor: "#00DFA2", ":hover": { bgcolor: "#00DFA2" } }}
               variant="contained"

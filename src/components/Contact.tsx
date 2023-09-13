@@ -58,15 +58,30 @@ const Contact = () => {
           </div>
           <div className="mt-10 w-fit mx-auto px-4 md:px-0 md:mx-0">
             <div className="flex items-center">
-              <MailOutlineIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
+              <MailOutlineIcon
+                sx={{
+                  fontSize: { xs: "2rem", sm: "2.5rem" },
+                  color: "#00DFA2",
+                }}
+              />
               <div className="text-white ml-3">pyaephyohan2200@gmail.com</div>
             </div>
             <div className="flex items-center my-5">
-              <LocalPhoneIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
+              <LocalPhoneIcon
+                sx={{
+                  fontSize: { xs: "2rem", sm: "2.5rem" },
+                  color: "#00DFA2",
+                }}
+              />
               <div className="text-white ml-3">09757814509</div>
             </div>
             <div className="flex items-center">
-              <LocationOnIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />
+              <LocationOnIcon
+                sx={{
+                  fontSize: { xs: "2rem", sm: "2.5rem" },
+                  color: "#00DFA2",
+                }}
+              />
               <div className="text-white ml-3">
                 5th Thirimon Street, Mayangone Township, Yangon
               </div>

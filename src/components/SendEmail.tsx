@@ -62,7 +62,7 @@ const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
       initial="hidden"
       animate="visible"
     >
-      <div className="text-primary text-4xl mb-10 text-center mt-16 lg:mt-0">
+      <div className="text-primary text-3xl md:text-4xl mb-10 text-center mt-16 lg:mt-0">
         Get in Touch
       </div>
       <form ref={form} onSubmit={handleSubmit}>

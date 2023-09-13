@@ -30,18 +30,24 @@ const SideBar = ({ show, setShow }: Props) => {
         <div className="flex flex-col text-lg items-start pl-[1rem]">
           <Link className={"text-primary flex items-center"} to={`/`}>
             <HomeIcon sx={{ mr: "0.8rem", fontSize: "2rem" }} />
-            <Typography sx={{ fontSize: "1.3rem" }}>Home</Typography>
+            <Typography sx={{ fontSize: { xs: "1.1rem", sm: "1.3rem" } }}>
+              Home
+            </Typography>
           </Link>
           <Link
             className={"text-primary my-[2.5rem] flex items-center"}
             to={`/projects`}
           >
             <ImportContactsIcon sx={{ mr: "0.8rem", fontSize: "2rem" }} />
-            <Typography sx={{ fontSize: "1.3rem" }}>Projects</Typography>
+            <Typography sx={{ fontSize: { xs: "1.1rem", sm: "1.3rem" } }}>
+              Projects
+            </Typography>
           </Link>
           <Link className={"text-primary flex items-center"} to={`/contact`}>
             <ContactMailIcon sx={{ mr: "0.8rem", fontSize: "2rem" }} />
-            <Typography sx={{ fontSize: "1.3rem" }}>Contact</Typography>
+            <Typography sx={{ fontSize: { xs: "1.1rem", sm: "1.3rem" } }}>
+              Contact
+            </Typography>
           </Link>
         </div>
         <div className="my-[2.5rem]">

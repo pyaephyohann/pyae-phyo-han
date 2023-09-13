@@ -16,13 +16,6 @@ const navBarVariants = {
   },
 };
 
-const navBarItemsVariants = {
-  hover: {
-    scale: 1.5,
-    transition: { type: "spring", stiffness: 300 },
-  },
-};
-
 const NavBar = () => {
   const location = window.location;
 
@@ -47,19 +40,15 @@ const NavBar = () => {
       </div>
       <div className="w-[50%] hidden md:block">
         <div className="flex justify-evenly  text-white text-lg">
-          <motion.div
-            variants={navBarItemsVariants}
-            whileHover="hover"
+          <div
             className={
               location.pathname === "/" ? "border-b-2 border-white pb-1" : ""
             }
           >
             <Link to={`/`}>Home</Link>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={navBarItemsVariants}
-            whileHover="hover"
+          <div
             className={
               location.pathname === "/projects"
                 ? "border-b-2 border-white pb-1"
@@ -67,10 +56,8 @@ const NavBar = () => {
             }
           >
             <Link to={`/projects`}>Projects</Link>
-          </motion.div>
-          <motion.div
-            variants={navBarItemsVariants}
-            whileHover="hover"
+          </div>
+          <div
             className={
               location.pathname === "/contact"
                 ? "border-b-2 border-white pb-1"
@@ -78,7 +65,7 @@ const NavBar = () => {
             }
           >
             <Link to={`/contact`}>Contact</Link>
-          </motion.div>
+          </div>
         </div>
       </div>
       <div className="hidden md:block">

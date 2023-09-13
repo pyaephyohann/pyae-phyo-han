@@ -94,7 +94,7 @@ const App = () => {
           animate="visible"
           className="p-5 lg:p-0 w-fit mx-auto lg:mx-0"
         >
-          <div className="text-white text-4xl">
+          <div className="text-white text-3xl md:text-4xl">
             <div className="mb-2">Hello! I'm </div>
             <div className="text-primary">Pyae Phyo Han</div>
           </div>

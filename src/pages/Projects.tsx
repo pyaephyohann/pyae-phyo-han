@@ -54,7 +54,7 @@ const Projects = () => {
           Personal Projects
         </motion.div>
         {/* projects show case */}
-        <div className="mt-[1rem] flex flex-wrap p-[1rem] md:p-[0]">
+        <div className="md:mt-[1rem] flex flex-wrap justify-center xl:justify-start p-[1rem] md:p-[0]">
           {projects.map((project) => {
             return <ProjectCard project={project} />;
           })}

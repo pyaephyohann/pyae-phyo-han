@@ -7,6 +7,7 @@ export interface Tech {
 
 export interface Project {
   name: string;
+  href: string;
   description: string;
   imageUrl: string;
   techs: Tech[];

@@ -1,4 +1,4 @@
-import Layout from "./Layout";
+import Layout from "../components/Layout";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -7,10 +7,10 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { motion } from "framer-motion";
-import SendEmail from "./SendEmail";
+import SendEmail from "../components/SendEmail";
 import { useState } from "react";
-import SuccessAlert from "./SuccessAlert";
-import WarningAlert from "./WarningAlert";
+import SuccessAlert from "../components/SuccessAlert";
+import WarningAlert from "../components/WarningAlert";
 
 const leftVariants = {
   hidden: {
@@ -47,8 +47,7 @@ const Contact = () => {
           variants={leftVariants}
           initial="hidden"
           animate="visible"
-          className="flex-col md:flex md:flex-row md:justify-evenly lg:flex lg:flex-col"
-        >
+          className="flex-col md:flex md:flex-row md:justify-evenly lg:flex lg:flex-col">
           <div>
             <img
               className="h-80 lg:h-96 rounded-2xl mx-auto"
@@ -99,8 +98,7 @@ const Contact = () => {
         variants={footerVariants}
         initial="hidden"
         animate="visible"
-        className="p-5 md:p-10 md:bg-secondary-200 "
-      >
+        className="p-5 md:p-10 md:bg-secondary-200 ">
         <div className="w-80 mx-auto flex justify-evenly">
           <a href="https://github.com/pyaephyohann">
             <GitHubIcon sx={{ fontSize: "2.5rem", color: "#00DFA2" }} />

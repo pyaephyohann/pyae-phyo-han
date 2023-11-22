@@ -92,8 +92,7 @@ const App = () => {
           variants={downVariants}
           initial="hidden"
           animate="visible"
-          className="p-5 lg:p-0 w-fit mx-auto lg:mx-0"
-        >
+          className="p-5 lg:p-0 w-fit mx-auto lg:mx-0">
           <div className="text-white text-3xl md:text-4xl">
             <div className="mb-2">Hello! I'm </div>
             <div className="text-primary">Pyae Phyo Han</div>
@@ -131,8 +130,7 @@ const App = () => {
           variants={leftVariants}
           initial="hidden"
           animate="visible"
-          className="text-white text-2xl mb-8"
-        >
+          className="text-white text-2xl mb-8">
           Techs I use
         </motion.div>
         <div className="flex flex-wrap">
@@ -144,8 +142,7 @@ const App = () => {
                 style={{
                   transitionDelay: true ? item.delay : "0ms",
                   transitionDuration: "1000ms",
-                }}
-              >
+                }}>
                 <Box sx={{ mr: "2rem", mb: "2rem" }}>
                   <img
                     className="w-14 h-14 rounded-md"

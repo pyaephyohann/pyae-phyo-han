@@ -26,16 +26,14 @@ const NavBar = () => {
       variants={navBarVariants}
       initial="hidden"
       animate="visible"
-      className="flex py-5 bg-secondary-200 items-center justify-between md:justify-around"
-    >
+      className="flex py-5 bg-secondary-200 items-center justify-between md:justify-around">
       <div className="text-primary ml-[2rem] md:ml-[0] text-4xl font-title cursor-pointer select-none">
         <Link to={`/`}>Pyae</Link>
       </div>
       <SideBar show={show} setShow={setShow} />
       <div
         onClick={() => setShow(true)}
-        className="block md:hidden mr-[2rem] md:mr-[0] text-white cursor-pointer"
-      >
+        className="block md:hidden mr-[2rem] md:mr-[0] text-white cursor-pointer">
         <MenuSharpIcon fontSize="large" />
       </div>
       <div className="w-[50%] hidden md:block">
@@ -43,8 +41,7 @@ const NavBar = () => {
           <div
             className={
               location.pathname === "/" ? "border-b-2 border-white pb-1" : ""
-            }
-          >
+            }>
             <Link to={`/`}>Home</Link>
           </div>
 
@@ -53,8 +50,7 @@ const NavBar = () => {
               location.pathname === "/projects"
                 ? "border-b-2 border-white pb-1"
                 : ""
-            }
-          >
+            }>
             <Link to={`/projects`}>Projects</Link>
           </div>
           <div
@@ -62,19 +58,17 @@ const NavBar = () => {
               location.pathname === "/contact"
                 ? "border-b-2 border-white pb-1"
                 : ""
-            }
-          >
+            }>
             <Link to={`/contact`}>Contact</Link>
           </div>
         </div>
       </div>
       <div className="hidden md:block">
-        <a href="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/pyae_phyo_han_resume.pdf?alt=media&token=3dfbf9fb-ca1b-485b-8003-b1d2de99e92c">
+        <a href="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/pyaephyohanresume.pdf?alt=media&token=b129ad18-9678-49a4-bbf2-0fba1bbfb743">
           <Button
             sx={{ bgcolor: "#00DFA2", ":hover": { bgcolor: "#00DFA2" } }}
             variant="contained"
-            startIcon={<CloudDownloadIcon />}
-          >
+            startIcon={<CloudDownloadIcon />}>
             Download CV
           </Button>
         </a>

@@ -36,8 +36,7 @@ const SideBar = ({ show, setShow }: Props) => {
           </Link>
           <Link
             className={"text-primary my-[2.5rem] flex items-center"}
-            to={`/projects`}
-          >
+            to={`/projects`}>
             <ImportContactsIcon sx={{ mr: "0.8rem", fontSize: "2rem" }} />
             <Typography sx={{ fontSize: { xs: "1.1rem", sm: "1.3rem" } }}>
               Projects
@@ -54,12 +53,11 @@ const SideBar = ({ show, setShow }: Props) => {
           <Divider />
         </div>
         <div className="w-fit mx-auto">
-          <a href="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/pyae_phyo_han_resume.pdf?alt=media&token=3dfbf9fb-ca1b-485b-8003-b1d2de99e92c">
+          <a href="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/pyaephyohanresume.pdf?alt=media&token=b129ad18-9678-49a4-bbf2-0fba1bbfb743">
             <Button
               sx={{ bgcolor: "#00DFA2", ":hover": { bgcolor: "#00DFA2" } }}
               variant="contained"
-              startIcon={<CloudDownloadIcon />}
-            >
+              startIcon={<CloudDownloadIcon />}>
               Download CV
             </Button>
           </a>

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Stack from "@mui/material/Stack";
 import Snackbar from "@mui/material/Snackbar";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import MuiAlert, { AlertColor, AlertProps } from "@mui/material/Alert";
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -14,9 +14,10 @@ interface Props {
   open: boolean;
   setOpen: (value: boolean) => void;
   message: string;
+  type: AlertColor;
 }
 
-const WarningAlert = ({ open, setOpen, message }: Props) => {
+const ToastAlert = ({ open, setOpen, message, type }: Props) => {
   const handleClose = (
     event?: React.SyntheticEvent | Event,
     reason?: string
@@ -31,7 +32,7 @@ const WarningAlert = ({ open, setOpen, message }: Props) => {
   return (
     <Stack spacing={2} sx={{ width: "100%" }}>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="warning" sx={{ width: "100%" }}>
+        <Alert onClose={handleClose} severity={type} sx={{ width: "100%" }}>
           {message}
         </Alert>
       </Snackbar>
@@ -39,4 +40,4 @@ const WarningAlert = ({ open, setOpen, message }: Props) => {
   );
 };
 
-export default WarningAlert;
+export default ToastAlert;

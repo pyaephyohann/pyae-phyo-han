@@ -9,8 +9,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { motion } from "framer-motion";
 import SendEmail from "../components/SendEmail";
 import { useState } from "react";
-import SuccessAlert from "../components/SuccessAlert";
-import WarningAlert from "../components/WarningAlert";
+import ToastAlert from "../components/ToastAlert";
+import { AlertColor } from "@mui/material";
 
 const leftVariants = {
   hidden: {
@@ -35,9 +35,11 @@ const footerVariants = {
 };
 
 const Contact = () => {
-  const [openSuccessAlert, setOpenSuccessAlert] = useState(false);
+  const [openToastAlert, setOpenToastAlert] = useState(false);
 
-  const [openWarningAlert, setOpenWarningAlert] = useState(false);
+  const [toastAlertMessage, setToastAlertMessage] = useState("");
+
+  const [toastAlertType, setToastAlertType] = useState<AlertColor>("success");
 
   return (
     <Layout>
@@ -89,8 +91,9 @@ const Contact = () => {
         </motion.div>
         {/* Right Side */}
         <SendEmail
-          setOpenSuccessAlert={setOpenSuccessAlert}
-          setOpenWarningAlert={setOpenWarningAlert}
+          setOpenToastAlert={setOpenToastAlert}
+          setToastAlertMessage={setToastAlertMessage}
+          setToastAlertType={setToastAlertType}
         />
       </div>
       {/* Footer */}
@@ -114,15 +117,11 @@ const Contact = () => {
           </a>
         </div>
       </motion.div>
-      <SuccessAlert
-        open={openSuccessAlert}
-        setOpen={setOpenSuccessAlert}
-        message="Email sent successfully"
-      />
-      <WarningAlert
-        open={openWarningAlert}
-        setOpen={setOpenWarningAlert}
-        message="You need to fill all the requirements"
+      <ToastAlert
+        open={openToastAlert}
+        setOpen={setOpenToastAlert}
+        message={toastAlertMessage}
+        type={toastAlertType}
       />
     </Layout>
   );

@@ -2,7 +2,6 @@ import { Button, TextField } from "@mui/material";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-
 import CircularProgress from "@mui/material/CircularProgress";
 
 const rightVariants = {
@@ -45,7 +44,12 @@ const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
     }
 
     emailjs
-      .send("service_um0rnsb", "template_8rx4zyi", values, "C7FZHBRWr2fOX03lO")
+      .send(
+        String(process.env.REACT_APP_SERVICE_ID),
+        String(process.env.REACT_APP_TEMPLATE_ID),
+        values,
+        String(process.env.REACT_APP_USER_ID)
+      )
       .then(() => {
         setEmail({ ...email, name: "", email: "", message: "" });
         setLoading(false);
@@ -60,8 +64,7 @@ const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
       className="static"
       variants={rightVariants}
       initial="hidden"
-      animate="visible"
-    >
+      animate="visible">
       <div className="text-primary text-3xl md:text-4xl mb-10 text-center mt-16 lg:mt-0">
         Get in Touch
       </div>
@@ -70,6 +73,7 @@ const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
           <div className="text-white">
             <div className="mb-4 text-xl">Name</div>
             <TextField
+              type="text"
               value={email.name}
               onChange={(event) =>
                 setEmail({ ...email, name: event.target.value })
@@ -93,6 +97,7 @@ const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
           <div className="text-white my-8">
             <div className="mb-4 text-xl">Email</div>
             <TextField
+              type="email"
               value={email.email}
               onChange={(event) =>
                 setEmail({ ...email, email: event.target.value })
@@ -116,6 +121,7 @@ const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
           <div className="text-white">
             <div className="mb-4 text-xl">Message For Me</div>
             <TextField
+              type="text"
               value={email.message}
               onChange={(event) =>
                 setEmail({ ...email, message: event.target.value })
@@ -140,8 +146,7 @@ const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
           <div className="p-2 mt-8 cursor-pointer select-none text-white bg-primary text-center uppercase rounded-xl">
             <Button
               type="submit"
-              sx={{ color: "white", width: "100%", height: "100%" }}
-            >
+              sx={{ color: "white", width: "100%", height: "100%" }}>
               {loading ? (
                 <CircularProgress sx={{ color: "white" }} />
               ) : (

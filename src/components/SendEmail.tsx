@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { AlertColor, Button, TextField } from "@mui/material";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
@@ -17,14 +17,25 @@ const rightVariants = {
 };
 
 interface Props {
-  setOpenSuccessAlert: (value: boolean) => void;
-  setOpenWarningAlert: (value: boolean) => void;
+  setOpenToastAlert: (value: boolean) => void;
+  setToastAlertMessage: (value: string) => void;
+  setToastAlertType: (value: AlertColor) => void;
 }
 
-const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
+const SendEmail = ({
+  setOpenToastAlert,
+  setToastAlertMessage,
+  setToastAlertType,
+}: Props) => {
   const form = useRef<HTMLFormElement>(null);
   const [email, setEmail] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
+
+  const showAlert = (type: AlertColor, message: string) => {
+    setOpenToastAlert(true);
+    setToastAlertType(type);
+    setToastAlertMessage(message);
+  };
 
   const handleSubmit = (e: any) => {
     setLoading(true);
@@ -39,7 +50,7 @@ const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
 
     if (!isValid) {
       setLoading(false);
-      setOpenWarningAlert(true);
+      showAlert("warning", "You need to fill all the requirements");
       return;
     }
 
@@ -53,12 +64,14 @@ const SendEmail = ({ setOpenSuccessAlert, setOpenWarningAlert }: Props) => {
       .then(() => {
         setEmail({ ...email, name: "", email: "", message: "" });
         setLoading(false);
-        setOpenSuccessAlert(true);
+        showAlert("success", "Email sent successfully");
       })
       .catch(() => {
-        alert("Error sending email:");
+        showAlert("error", "Oops! Cannot send email");
+        setLoading(false);
       });
   };
+
   return (
     <motion.div
       className="static"

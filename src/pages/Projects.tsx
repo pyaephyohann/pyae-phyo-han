@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Project } from "../utils/typings/types";
 import Layout from "../components/Layout";
 import ProjectCard from "../components/ProjectCard";
+import { frontendProjects, fullstackProjects } from "../utils/typings/datas";
 
 const leftVariants = {
   hidden: {
@@ -14,35 +14,6 @@ const leftVariants = {
 };
 
 const Projects = () => {
-  const projects: Project[] = [
-    {
-      name: "Pizngo ( POS APP )",
-      description: "QR code ordering system POS app ( Admin Panel included )",
-      href: "https://pizngo.shop",
-      imageUrl:
-        "https://firebasestorage.googleapis.com/v0/b/pizngo-79703.appspot.com/o/SmartSelect_20230901-202339_Discord.jpg?alt=media&token=220a2399-6290-49ae-9a4d-df90f07c876a",
-      techs: [
-        { name: "Next js" },
-        { name: "MUI" },
-        { name: "Postgres SQL" },
-        { name: "Prisma" },
-      ],
-    },
-    {
-      name: "Phantom ( POS APP )",
-      description: "Customer Order App and Admin Panel",
-      href: "https://phantom-murex.vercel.app",
-      imageUrl:
-        "https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/Screenshot%20from%202023-11-22%2019-01-22.png?alt=media&token=8aa7c254-6d59-450b-8f3f-dff34d6dfb82",
-      techs: [
-        { name: "Next js" },
-        { name: "MUI" },
-        { name: "Postgres SQL" },
-        { name: "Prisma" },
-      ],
-    },
-  ];
-
   return (
     <Layout>
       <div>
@@ -50,12 +21,29 @@ const Projects = () => {
           variants={leftVariants}
           initial="hidden"
           animate="visible"
-          className="text-white text-2xl mt-[7rem] ml-[2rem]">
-          Personal Projects
+          className="text-white text-2xl mt-[7rem] ml-[2rem]"
+        >
+          Fullstack Projects
         </motion.div>
         {/* projects show case */}
         <div className="md:mt-[1rem] flex flex-wrap justify-center xl:justify-start p-[1rem] md:p-[0]">
-          {projects.map((project) => {
+          {fullstackProjects.map((project) => {
+            return <ProjectCard project={project} />;
+          })}
+        </div>
+      </div>
+      <div>
+        <motion.div
+          variants={leftVariants}
+          initial="hidden"
+          animate="visible"
+          className="text-white text-2xl mt-[3rem] ml-[2rem]"
+        >
+          Frontend Projects
+        </motion.div>
+        {/* projects show case */}
+        <div className="md:mt-[1rem] flex flex-wrap justify-center xl:justify-start p-[1rem] md:p-[0]">
+          {frontendProjects.map((project) => {
             return <ProjectCard project={project} />;
           })}
         </div>

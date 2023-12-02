@@ -40,6 +40,7 @@ export const frontendProjects: Project[] = [
       { name: "React Js" },
       { name: "Tailwind Css" },
       { name: "Framer Motion" },
+      { name: "React Scroll" },
     ],
   },
 ];

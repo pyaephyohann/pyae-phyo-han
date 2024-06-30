@@ -81,6 +81,10 @@ const App = () => {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDNf_xyfNDyt3NEy0S-ETw_2x6qhLwpqax89nd7hgqoA&s://https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/postgre.png?alt=media&token=82ee3d31-e854-492d-9cb3-c9430da9b024.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/nodejs.png?alt=media&token=735a3f04-8a51-41f0-beb3-a2de46aec58a",
       delay: "3500ms",
     },
+    {
+      imageUrl: "https://asset.brandfetch.io/idykQnbEJm/idHFgyE8BR.png",
+      delay: "3700ms",
+    },
   ];
 
   return (
@@ -92,27 +96,20 @@ const App = () => {
           variants={downVariants}
           initial="hidden"
           animate="visible"
-          className="p-5 lg:p-0 w-fit mx-auto lg:mx-0">
+          className="p-5 lg:p-0 w-[50%] mx-auto lg:mx-0"
+        >
           <div className="text-white text-3xl md:text-4xl">
             <div className="mb-2">Hello! I'm </div>
             <div className="text-primary">Pyae Phyo Han</div>
           </div>
-          <div className="text-transparent text-lg mt-8 lg:mt-10">
-            A passionate fullstack developer with React.js, Express.js and
-            Databases
-          </div>
-          <div className="text-transparent text-lg mt-2">
-            I learned html, css and javascript from youtube and attended
-          </div>
-          <div className="text-transparent text-lg mt-2">
-            MSquare Programming fullstack course for six months
-          </div>
-          <div className="text-transparent text-lg mt-2">
-            I have strong communication skill and I'm entry level developer so
-          </div>
-          <div className="text-transparent text-lg mt-2">
-            I'm seeking for a job opportunity to get real world projects
-            experiences
+          <div className="text-transparent text-xl mt-8 lg:mt-10">
+            Highly motivated and passionate Fullstack Web Developer with 2 years
+            of experience in developing dynamic and responsive web applications.
+            Proven ability to work independently and efficiently in a remote
+            work environment. Adept at both frontend and backend development, I
+            am committed to continuous learning and staying updated with the
+            latest industry trends. My passion for programming drives me to
+            deliver high-quality code and innovative solutions
           </div>
         </motion.div>
         {/* Right Side */}
@@ -130,7 +127,8 @@ const App = () => {
           variants={leftVariants}
           initial="hidden"
           animate="visible"
-          className="text-white text-2xl mb-8">
+          className="text-white text-2xl mb-8"
+        >
           Techs I use
         </motion.div>
         <div className="flex flex-wrap">
@@ -142,7 +140,8 @@ const App = () => {
                 style={{
                   transitionDelay: true ? item.delay : "0ms",
                   transitionDuration: "1000ms",
-                }}>
+                }}
+              >
                 <Box sx={{ mr: "2rem", mb: "2rem" }}>
                   <img
                     className="w-14 h-14 rounded-md"

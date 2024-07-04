@@ -90,13 +90,13 @@ const App = () => {
   return (
     <Layout>
       {/* Container */}
-      <div className="mt-[6rem] lg:mt-[8rem] lg:flex lg:justify-evenly">
+      <div className="mt-[6rem] lg:mt-[8rem] lg:flex lg:justify-evenly lg:items-center">
         {/* Left Side */}
         <motion.div
           variants={downVariants}
           initial="hidden"
           animate="visible"
-          className="p-5 lg:p-0 w-[50%] mx-auto lg:mx-0"
+          className="p-5 lg:p-0 w-[100%] lg:w-[50%] mx-auto lg:mx-0"
         >
           <div className="text-white text-3xl md:text-4xl">
             <div className="mb-2">Hello! I'm </div>
@@ -115,7 +115,7 @@ const App = () => {
         {/* Right Side */}
         <motion.div variants={downVariants} initial="hidden" animate="visible">
           <img
-            className="rounded-2xl h-60 lg:h-80 mx-auto lg:mx-0 mt-5 lg:mt-0"
+            className="rounded-2xl h-[20rem] mx-auto lg:mx-0 mt-5 lg:mt-0"
             alt="pyaephyohan"
             src="https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/received_915212149754401.jpg?alt=media&token=c28bd606-e8ec-44ad-8f8c-88b1adaba6f4"
           />

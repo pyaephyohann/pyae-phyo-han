@@ -6,7 +6,7 @@ export const fullstackProjects: Project[] = [
     description: "QR code ordering system POS app ( Admin Panel included )",
     href: "https://pizngo.shop",
     imageUrl:
-      "https://firebasestorage.googleapis.com/v0/b/abacus-myanmar.appspot.com/o/Screenshot%202024-07-05%20013859.png?alt=media&token=acb76ddc-816d-439d-9429-560f0e005853",
+      "https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/Screenshot%202024-07-05%20013859.png?alt=media&token=b617795a-83b7-40aa-8451-27eec8d15ee1",
     techs: [
       { name: "Next js" },
       { name: "MUI" },

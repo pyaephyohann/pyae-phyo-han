@@ -27,6 +27,19 @@ export const fullstackProjects: Project[] = [
       { name: "Prisma" },
     ],
   },
+  {
+    name: "Yee Sarr Sar",
+    description: "Send love letter to your crush",
+    href: "https://yee-sarr-sar.vercel.app",
+    imageUrl:
+      "https://firebasestorage.googleapis.com/v0/b/first-time-fire-base.appspot.com/o/Screenshot%202024-08-13%20032151.png?alt=media&token=6c95704e-9e2e-4a2b-8c90-81fe9732d83f",
+    techs: [
+      { name: "Next js" },
+      { name: "Tailwind Css" },
+      { name: "Postgres SQL" },
+      { name: "Prisma" },
+    ],
+  },
 ];
 
 export const frontendProjects: Project[] = [

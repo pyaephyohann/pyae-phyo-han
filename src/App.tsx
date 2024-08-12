@@ -103,7 +103,7 @@ const App = () => {
             <div className="text-primary">Pyae Phyo Han</div>
           </div>
           <div className="text-transparent text-xl mt-8 lg:mt-10">
-            Highly motivated and passionate Fullstack Web Developer with 2 years
+            Highly motivated and passionate Fullstack Web Developer with 1 year
             of experience in developing dynamic and responsive web applications.
             Proven ability to work independently and efficiently in a remote
             work environment. Adept at both frontend and backend development, I

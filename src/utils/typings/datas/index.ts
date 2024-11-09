@@ -40,6 +40,20 @@ export const fullstackProjects: Project[] = [
       { name: "Prisma" },
     ],
   },
+  {
+    name: "Date With Me",
+    description: "Making date plan for your special day",
+    href: "https://date-with-meee.vercel.app",
+    imageUrl:
+      "https://cdn.discordapp.com/attachments/1073275630591934507/1304684180021448725/Screenshot_2024-11-09_121549.png?ex=67304954&is=672ef7d4&hm=67f5a078e8bb2063eeba4713d25e79fc10ad89da70f1e06b4dd7c63f9380f21a&",
+    techs: [
+      { name: "Next js" },
+      { name: "Tailwind Css" },
+      { name: "Postgres SQL" },
+      { name: "Prisma" },
+      { name: "Framer Motion" },
+    ],
+  },
 ];
 
 export const frontendProjects: Project[] = [
